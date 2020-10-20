@@ -18,5 +18,19 @@ def fib_dp(n, memo):
         memo[n] = fib_dp(n-1, memo) + fib_dp(n-2, memo)
     return memo[n]
 
+# interative approach
+def fib_iterative(n):
+    iter_memo = [0] * (n+1)
+    iter_memo [0] = 0
+    iter_memo [1] = 1
+
+    for x in range (2, n+1):
+        iter_memo[x] = iter_memo[x-1] + iter_memo[x-2]
+
+    return iter_memo[n]
+
+
 print(fib(5))
 print(fib(8))
+print(fib_iterative(5))
+print(fib_iterative(8))
